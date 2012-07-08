@@ -4,10 +4,11 @@
                            [congomongo "0.1.9"]
                            [noir "1.2.1"]
                            [jayq "0.1.0-alpha2"]]
-            :dev-dependencies [[lein-cljsbuild "0.0.13"]] ; cljsbuild plugin
+            :dev-dependencies [[lein-cljsbuild "0.1.8"]]
                         :cljsbuild
                         {
                          :source-path "src-cljs"
+                         :repl-listen-port 9000
                          :compiler
                          {
                           :output-to "resources/public/js/cljs.js"
