@@ -1,5 +1,11 @@
-pom.xml
-*jar
-/lib/
-/classes/
-.lein-deps-sum
+*~
+.idea
+/.DS_Store
+/classes
+/lib
+closure
+/core.js
+/coreadvanced.js
+/coresimple.js
+/out
+.repl
