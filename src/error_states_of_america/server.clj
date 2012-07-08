@@ -1,5 +1,5 @@
 (ns error-states-of-america.server
-  (:require [noir.server :as server] [noir.options :as options])
+  (:require [noir.server :as server])
   (:use somnium.congomongo))
 
 (server/load-views "src/error_states_of_america/views/")
@@ -18,7 +18,7 @@
           (zipmap [:match :user :pass :host :port :db] (re-groups matcher))))) ;; Construct an options map.
 
     (def config
-      (if (options/dev-mode?)
+      (if (= mode :prod)
         (split-mongo-url (get (System/getenv) "MONGOHQ_URL"))
         {:db "error_states", :port "27017", :host "127.0.0.1"}))
 
