@@ -1,5 +1,5 @@
 (ns error-states-of-america.server
-  (:require [noir.server :as server])
+  (:require [noir.server :as server] [noir.options :as options])
   (:use somnium.congomongo))
 
 (server/load-views "src/error_states_of_america/views/")
@@ -17,7 +17,7 @@
         (when (.find matcher) ;; Check if it matches.
           (zipmap [:match :user :pass :host :port :db] (re-groups matcher))))) ;; Construct an options map.
 
-    (if (dev-mode?)
+    (if (options/dev-mode?)
       (def conn
         (make-connection "error_states"
                          :host "127.0.0.1"
