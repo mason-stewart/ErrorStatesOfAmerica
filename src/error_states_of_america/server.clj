@@ -30,4 +30,4 @@
                            :port (Integer. (:port config))))
         (authenticate conn (:user config) (:pass config))
 
-    (set-connection! conn)))
+    (set-connection! conn)))))
