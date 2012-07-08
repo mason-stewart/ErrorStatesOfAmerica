@@ -17,17 +17,18 @@
         (when (.find matcher) ;; Check if it matches.
           (zipmap [:match :user :pass :host :port :db] (re-groups matcher))))) ;; Construct an options map.
 
-    (if (options/dev-mode?)
-      (def conn
-        (make-connection "error_states"
-                         :host "127.0.0.1"
-                         :port 27017))
-      (let [config (split-mongo-url (get (System/getenv) "MONGOHQ_URL"))]
-        (def conn
-          (make-connection "error_states"
-                           :db (:db config)
-                           :host (:host config)
-                           :port (Integer. (:port config))))
-        (authenticate conn (:user config) (:pass config))
+    (def config
+      (if (options/dev-mode?)
+        (split-mongo-url (get (System/getenv) "MONGOHQ_URL"))
+        {:db "error_states", :port "27017", :host "127.0.0.1"}))
 
-    (set-connection! conn)))))
+    (def conn
+      (make-connection "error_states"
+                       :db (:db config)
+                       :host (:host config)
+                       :post (:port config)))
+
+    (if (and (:user config) (:password config))
+      (authenticate conn (:user config) (:pass config)))
+
+    (set-connection! conn)))
