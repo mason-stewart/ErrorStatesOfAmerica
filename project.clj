@@ -2,7 +2,8 @@
             :description "FIXME: write this!"
             :dependencies [[org.clojure/clojure "1.3.0"]
                            [congomongo "0.1.9"]
-                           [noir "1.2.1"]]
+                           [noir "1.2.1"]
+                           [jayq "0.1.0-alpha2"]]
             :dev-dependencies [[lein-cljsbuild "0.0.13"]] ; cljsbuild plugin
                         :cljsbuild
                         {

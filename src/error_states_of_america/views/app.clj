@@ -1,8 +1,9 @@
-(ns error-states-of-america.views.welcome
+(ns error-states-of-america.views.app
   (:require [error-states-of-america.views.common :as common])
   (:use [noir.core :only [defpage]]
         [hiccup.core :only [html]]))
 
-(defpage "/welcome" []
+(defpage "/" []
          (common/layout
-           [:p "Welcome to error-states-of-america"]))
+           [:p "hye... to error-states-of-america"]
+           [:div#interface "what"]))
