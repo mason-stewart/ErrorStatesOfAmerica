@@ -5,7 +5,7 @@
 (server/load-views "src/error_states_of_america/views/")
 
 (defn -main [& m]
-  (let [mode (keyword (or (first m) :dev))
+  (let [mode (if (= (get (System/getenv) "NOIR_ENV") "production") :prod :dev)
         port (Integer. (get (System/getenv) "PORT" "8080"))]
 
     (server/start port {:mode mode
