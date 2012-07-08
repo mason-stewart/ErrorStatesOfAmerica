@@ -22,7 +22,7 @@
         (make-connection "error_states"
                          :host "127.0.0.1"
                          :port 27017))
-      (let [config (split-mongo-url (get (System/env) "MONGOHQ_URL"))]
+      (let [config (split-mongo-url (get (System/getenv) "MONGOHQ_URL"))]
         (def conn
           (make-connection "error_states"
                            :db (:db config)
