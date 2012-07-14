@@ -7,12 +7,15 @@
             (html5
               [:head
                 [:title "error-states-of-america"]
-                (include-css "/css/reset.css")]
+                (include-css "/css/bootstrap.min.css")
+                (include-css "/css/main.css")]
               [:body
-                [:div#wrapper
-                  content]
+                [:div.background]
+                content
                 (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
                 (include-js "/js/underscore-min.js")
                 (include-js "/js/backbone-min.js")
-                (include-js "/js/cljs.js")
+                (include-js "/js/bootstrap.min.js")
+                (include-js "/js/jquery.nouislider.min.js")
+                (include-js "/js/main.js")
                 ]))

@@ -1,0 +1,109 @@
+@import "compass";
+
+.background {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f6f1e3 url('/img/background.jpg') no-repeat top left;
+  background-size: cover;
+}
+.logo {
+  position: relative;
+  width: 960px;
+  height: 234px;
+  margin: 40px auto;
+  background: url('/img/logo.png') no-repeat top center;
+}
+h3 {
+  font-size: 14px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #fff;
+  span {
+    float: right;
+  }
+}
+.container {
+  position: relative;
+  z-index: 1;
+  background: #ebeae7;
+  @include border-radius(4px);
+  @include box-shadow(0 5px 21px rgba(0,0,0,0.4));
+  padding: 30px 10px;
+  .controls {
+    background: #c4c1bb;
+    @include border-radius(4px);
+    .controls-header {
+      background: #cecbc4;
+      text-align: center;
+      padding: 10px 0 7px;
+      @include border-radius(4px 4px 0 0);
+      span {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 18px;
+        font-weight: lighter;
+        padding-right: 8px;
+      }
+    }
+    .controls-body {
+      padding: 0 10px 10px;
+      @include border-radius(0 0 4px 4px);
+      .btn-group {
+        margin-bottom: 20px;
+        .btn {
+          font-size: 12px;
+        }
+      }
+      .sliderbar {
+        margin-bottom: 20px
+      }
+      h3 {
+        margin: 10px 0 10px;
+      }
+    }
+  }
+  .sandbox {
+    input {
+      padding: 10px;
+      border: 1px solid #c3c3c0;
+      @include border-radius(4px);
+      @include box-shadow(inset 0 1px 3px rgba(0,0,0,0.2));
+    }
+  }
+}
+
+// slider styles
+.sliderbar {
+  width: 176px;
+  margin-left: 14 px;
+  height: 8px;
+  background: #a7a49f;
+  @include border-radius(4px);
+  @include box-shadow(inset 0 3px 3px rgba(0,0,0,0.3));
+  .noUi_handle {
+    height: 8px;
+    width: 8px;
+  }
+  .noUi_midBar {
+    display: none;
+  }
+  .noUi_sliderKnob {
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    background: #f8f8f8;
+    @include border-radius(50px);
+    @include box-shadow(0 1px 3px rgba(0,0,0,0.3));
+  }
+  .noUi_sliderKnob:hover, .noUi_activeHandle {
+    background: #ececec;
+    cursor: pointer;
+  }
+}
